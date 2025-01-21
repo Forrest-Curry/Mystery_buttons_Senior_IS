@@ -33,7 +33,8 @@ def endGame():
 
 def CheckWin():
     if lights == winCondition: 
-        messagebox.showinfo(title='Message', message='Game Complette')
+        #messagebox.showinfo(title='Message', message='Game Complette')
+        tk.Label(main, text="YOU WIN", font=('DIN Condensed', 50)).place(relx = 0.5, rely = 0.3, anchor = 'center')
 
 def LEDImageChange(arry):
     for i in range(len(arry)):
@@ -59,15 +60,16 @@ def buttonImgSetUp():
 
     buttonFrame.pack(padx=10,pady=10)
 
-    endButton = tk.Button(main, text='QUIT', command=endGame)
+    endButton = tk.Button(main, text='QUIT', font=('DIN Condensed', 20), command=endGame)
     endButton.pack(padx=10,pady=10)
 
 
 def buttonImgPress(buttonNum):
-    CheckWin()
     print('button ', buttonNum, ' pressed')
     lightArray= buttonPress(buttonNum)
     LEDImageChange(lightArray)
+    CheckWin()
+
 
 
 
