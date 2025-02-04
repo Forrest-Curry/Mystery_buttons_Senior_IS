@@ -65,7 +65,6 @@ def buttonImgSetUp():
 
 
 def buttonImgPress(buttonNum):
-    print('button ', buttonNum, ' pressed')
     lightArray= buttonPress(buttonNum)
     LEDImageChange(lightArray)
     CheckWin()
