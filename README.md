@@ -1,2 +1,2 @@
 # Mystery Buttons Game
-The software implementation for the Mystery Buttons game for the completion of my senior independent study project
+The software implementation of the Mystery Buttons game for the completion of my senior independent study project

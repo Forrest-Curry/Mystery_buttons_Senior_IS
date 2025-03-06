@@ -2,7 +2,6 @@ import random
 from datetime import datetime
 import tkinter as tk
 import numpy as np
-from tkinter import messagebox
 from PIL import Image, ImageTk
 
 #Randomizes seed for more vaiation in light and button initalization
@@ -11,7 +10,7 @@ random.seed(datetime.now().timestamp())
 #GUI objects 
 main = tk.Tk()
 main.geometry('1000x500')
-main.title('Game With GUI')
+main.title('Mystery Button Puzzle')
 
 LEDframe = tk.Frame(main)
 LEDframe.rowconfigure(0,weight=1)
@@ -51,7 +50,7 @@ def computeGameLogic(num):
     for i in range(len(lights)):
         # ^ is XOR operator to see if a light is turned on or off (1 or 0)
         lights[i] = lights[i] ^ buttons[num][i]
-    return 0
+    return 
 
 #adjusts GUI LED's to match internal array representation
 #replaces and covers up previous lights in LEDframe each time lights change
@@ -93,12 +92,9 @@ def gameLoop():
 #randomizes the starting point for the lights ensuring that they are not all 0 
 #using lights as global variable
 def randomLights():
-    #creates array of all 1
     global lights
 
-    null = []
-    for i in range(len(lights)):
-        null.append(1)
+    null = [1,1,1,1]
 
     #fills list with either 1 or 0 
     for i in range(len(lights)):
@@ -106,9 +102,9 @@ def randomLights():
     
     #checks for list of all 0s
     if null == lights:
-        randomLights(lights)
+        randomLights()
     else:
-        return 0
+        return
 
 #Randomizes intialization of buttons as global variable
 def randomButton():
@@ -123,6 +119,7 @@ def randomButton():
     rank = np.linalg.matrix_rank(npList)
     while (rank != npList.shape[1]): 
         print('Linearly Dependent')
+        print(npList.tolist())
         for i in range(4):
             for j in range(4):
                 npList[i][j] = random.randint(0,1)
@@ -133,7 +130,8 @@ def randomButton():
 
     #convert back to standerd array and reasign to change input array
     buttons = npList.tolist()
-    return 0
+
+    return
 
 #Sets up button GUI
 def buttonImgSetUp():
