@@ -2,17 +2,15 @@
 This GitHub repository contains the software materials and images of the hardware materials that coincide with my 2025 Senior Independent Study project at the College of Wooster. The project creates the same puzzle game in three implementations: software, an Arduino circuit, and a raw circuit with no processor. 
 
 ## Software 
-Files: `SoftwareGame.py`, `imgLEDoff.png`, `imgLEDon.png`, `pushButton.png`
-The software implementation is written in Python and uses the following modules and libraries: random, datetime, Tkinter, Numpy,  and Image and ImageTk from Pillow. 
-The game can be run and played by executing the SoftwareGame.py file.
+Files: `SoftwareGame.py`, `imgLEDoff.png`, `imgLEDon.png`, `pushButton.png`  
+The software implementation is written in Python and uses the following modules and libraries: random, datetime, Tkinter, Numpy,  and Image and ImageTk from Pillow. The game can be run and played by executing the SoftwareGame.py file.
 
 ## Arduino circuit
-File: `ArduinoSoftware.ino`
+File: `ArduinoSoftware.ino`  
 The Arduino circuit has two parts, the software and the physical circuit. The software will present errors unless opened in the [Arduino IDE](https://www.arduino.cc/en/software). 
-The pin setup for the physical board is as follows: 
-LED outputs in pins: 3,4,5,6
-Button inputs in pins: 8,9,10,11 
-
+The pin setup for the physical board is as follows:  
+LED outputs in pins: 3,4,5,6  
+Button inputs in pins: 8,9,10,11   
 The circuit implementation can be seen in the following image: 
 ![Image](https://github.com/user-attachments/assets/906cfe16-5f3b-4fd5-a860-3b51d0083c7f)
 
