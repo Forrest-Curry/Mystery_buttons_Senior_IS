@@ -81,7 +81,6 @@ def gameLoop():
     randomLights()
     #Randomizes the initalization of the buttons
     randomButton()
-    print('buttons: ', buttons)
     #Sets GUI lights to match on/off state of internal representation
     LEDImageChange()
     #initalizes the buttons in GUI
@@ -118,15 +117,11 @@ def randomButton():
     #check if linearly independent, refill array untill linearly independent
     rank = np.linalg.matrix_rank(npList)
     while (rank != npList.shape[1]): 
-        print('Linearly Dependent')
-        print(npList.tolist())
         for i in range(4):
             for j in range(4):
                 npList[i][j] = random.randint(0,1)
 
         rank = np.linalg.matrix_rank(npList)
-        
-    print('Linearly Independent')
 
     #convert back to standerd array and reasign to change input array
     buttons = npList.tolist()
